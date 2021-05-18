@@ -1,6 +1,6 @@
 ## Demo
 
-On Netlify [https://nextjs-messenger-clone.netlify.app](https://nextjs-messenger-clone.netlify.app)
+On Vercel [https://nextjs-messenger-clone.vercel.app/](https://nextjs-messenger-clone.vercel.app/)
 
 ## Install
 
