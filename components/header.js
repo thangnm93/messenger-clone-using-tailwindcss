@@ -58,7 +58,7 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-4 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-4 rounded-md shadow-xl z-30">
             Trang chủ
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Header() {
           <span className="absolute top-0 right-7 w-auto h-5 text-white bg-red-600 rounded-full px-1 text-xs flex items-center">
             9+
           </span>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl z-30">
             Trang
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function Header() {
           <span className="absolute top-0 right-7 w-auto h-5 text-white bg-red-600 rounded-full px-1 text-xs flex items-center">
             9+
           </span>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl z-30">
             Watch
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-3 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-3 rounded-md shadow-xl z-30">
             Marketplace
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function Header() {
           <span className="absolute top-0 right-7 w-auto h-5 text-white bg-red-600 rounded-full px-1 text-xs flex items-center">
             9+
           </span>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-7 rounded-md shadow-xl z-30">
             Nhóm
           </p>
         </div>
@@ -177,7 +177,7 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-0 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 left-0 rounded-md shadow-xl z-30">
             Tạo
           </p>
         </div>
@@ -197,7 +197,7 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-6 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-6 rounded-md shadow-xl z-30">
             Thông báo
           </p>
         </div>
@@ -217,7 +217,7 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-7 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-7 rounded-md shadow-xl z-30">
             Tài khoản
           </p>
         </div>
@@ -261,7 +261,7 @@ export default function Header() {
               </svg>
             )}
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 -left-2 rounded-md shadow-xl">
+          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 max-w-max top-14 -left-2 rounded-md shadow-xl z-30">
             {theme === "light" ? "Tối" : "Sáng"}
           </p>
         </div>
