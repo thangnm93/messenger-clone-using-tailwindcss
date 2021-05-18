@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex">
           <MainLeft />
           <div className="flex justify-between w-full">
-            <div className="bg-white dark:bg-bg-main w-3/4">
+            <div className="bg-white dark:bg-bg-main border-r dark:border-bg-secondary w-3/4">
               <div className="p-3 flex justify-between items-center shadow-xl">
                 <div className="flex items-center">
                   <img
@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white w-1/4"></div>
+            <div className="bg-white dark:bg-bg-main w-1/4"></div>
           </div>
         </div>
       </main>
