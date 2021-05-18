@@ -14,16 +14,18 @@ export default function Home() {
         <div className="flex">
           <MainLeft />
           <div className="flex justify-between w-full">
-            <div className="bg-bg-main w-3/4">
-              <div className="p-3 flex justify-between items-center bg-bg-main shadow-xl">
+            <div className="bg-white dark:bg-bg-main w-3/4">
+              <div className="p-3 flex justify-between items-center shadow-xl">
                 <div className="flex items-center">
                   <img
                     className="w-11 h-11 rounded-full border-bg-secondary"
                     src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=90&q=80"
                   />
                   <div className="ml-2">
-                    <p className="text-gray-300 text-sm">Thang Nguyen</p>
-                    <span className="text-gray-300 text-xs">
+                    <p className="text-gray-800 dark:text-gray-300 text-sm">
+                      Thang Nguyen
+                    </p>
+                    <span className="text-gray-800 dark:text-gray-300 text-xs">
                       Hoạt động 57 phút trước
                     </span>
                   </div>
@@ -76,7 +78,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white w-1/4">dddd</div>
+            <div className="bg-white w-1/4"></div>
           </div>
         </div>
       </main>
