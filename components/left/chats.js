@@ -464,7 +464,7 @@ export default function ChatList() {
   return (
     <>
       <div className="pl-4 pr-2 pb-2 overflow-y-hidden hover:overflow-y-auto scrollbar max-h-68vh 2xl:max-h-80vh">
-        <hr className="border-b-1 sticky top-0" />
+        <hr className="border-b-1 dark:border-bg-secondary sticky top-0" />
         {dataChats.map((chat, index) => {
           return (
             <div
@@ -514,7 +514,7 @@ export default function ChatList() {
               <div className="flex items-center justify-between">
                 <a
                   href="#"
-                  className="invisible group-hover:visible flex justify-center items-center ml-3 border rounded-full w-10 h-10 bg-gray-200 dark:bg-bg-secondary dark:border-bg-secondary z-10"
+                  className="invisible group-hover:visible flex justify-center items-center ml-3 border rounded-full w-10 h-10 bg-gray-300 dark:bg-gray-600 dark:border-bg-secondary z-10"
                 >
                   <svg
                     className="w-6 h-6 stroke-current"
@@ -556,7 +556,7 @@ export default function ChatList() {
                       return (
                         <img
                           key={i}
-                          className={`absolute w-4 h-4 rounded-full -top-2 ${
+                          className={`absolute w-4 h-4 rounded-full ring-1 ring-gray-300 -top-2 ${
                             i === 0 ? "right-0" : i === 1 ? "left-0" : "right-6"
                           }`}
                           href="#"
