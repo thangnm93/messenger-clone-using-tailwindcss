@@ -7,7 +7,7 @@ export default function MainRight() {
   return (
     <div className="flex justify-between w-full">
       <div className="bg-white dark:bg-bg-main border-r dark:border-bg-secondary w-3/4">
-        <div className="relative">
+        <div className="relative h-full">
           <Header />
           <Chat />
           <Typing />
