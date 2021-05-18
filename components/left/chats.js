@@ -463,7 +463,7 @@ const dataChats = [
 export default function ChatList() {
   return (
     <>
-      <div className="pl-4 pr-2 pb-2 overflow-y-hidden hover:overflow-y-auto scrollbar max-h-68vh 2xl:max-h-80vh">
+      <div className="pl-4 pr-2 pb-2 overflow-y-hidden hover:overflow-y-auto scrollbar max-h-70vh 2xl:max-h-80vh">
         <hr className="border-b-1 dark:border-bg-secondary sticky top-0" />
         {dataChats.map((chat, index) => {
           return (
