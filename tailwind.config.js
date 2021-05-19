@@ -17,6 +17,8 @@ module.exports = {
       },
       maxHeight: {
         ...defaultTheme.maxHeight,
+        "55vh": "55vh",
+        "58vh": "58vh",
         "60vh": "60vh",
         "63vh": "63vh",
         "65vh": "65vh",
@@ -47,7 +49,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      visibility: ["group-hover"],
+      visibility: ["group-hover", "focus", "group-focus"],
+      display: ["group-focus", "focus"],
       overflow: ["hover"],
     },
   },

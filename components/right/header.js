@@ -2,11 +2,14 @@ export default function Header() {
   return (
     <div className="p-3 flex justify-between items-center shadow-xl">
       <div className="flex items-center">
-        <img
-          className="w-11 h-11 rounded-full border-bg-secondary ring-1 ring-gray-50"
-          src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=90&q=80"
-        />
-        <div className="ml-2">
+        <div className="relative">
+          <img
+            className="w-11 h-11 rounded-full border-bg-secondary ring-1 ring-gray-50"
+            src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=90&q=80"
+          />
+          <span className="absolute w-3 h-3 border border-white bg-green-600 rounded-full right-0 top-8"></span>
+        </div>
+        <div className="ml-4">
           <p className="text-gray-800 dark:text-gray-300 text-sm">
             Thang Nguyen
           </p>

@@ -1,28 +1,35 @@
 import { useTheme } from "next-themes";
+import { useState } from "react";
+
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const [openProfile, setOpenProfile] = useState(false);
+  const [onSearch, setOnSearch] = useState(false);
   return (
     <header className="flex items-center justify-between border-b dark:border-bg-secondary shadow-xl p-2 px-4">
       <div className="flex">
-        <a href="#" className="text-blue-500">
-          <svg className="2-10 h-10" viewBox="0 0 36 36" fill="currentColor">
-            <defs>
-              <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%">
-                <stop offset="0%" stopColor="#0062E0"></stop>
-                <stop offset="100%" stopColor="#19AFFF"></stop>
-              </linearGradient>
-            </defs>
-            <path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
-            <path
-              fill="#ffffff"
-              d="M25 23l.8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"
-            ></path>
-          </svg>
-        </a>
-        <div className="relative ml-3">
-          <div className="absolute text-black dark:text-gray-200 flex items-center px-4 h-full cursor-pointer">
+        <a href="#" className="flex items-center">
+          {!onSearch ? (
             <svg
-              className="w-5 h-5 stroke-current"
+              className="w-10 h-10 text-blue-500"
+              viewBox="0 0 36 36"
+              fill="currentColor"
+            >
+              <defs>
+                <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%">
+                  <stop offset="0%" stopColor="#0062E0"></stop>
+                  <stop offset="100%" stopColor="#19AFFF"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
+              <path
+                fill="#ffffff"
+                d="M25 23l.8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"
+              ></path>
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 text-gray-500 stroke-current"
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +37,42 @@ export default function Header() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={1}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-          </div>
+          )}
+        </a>
+        <div className="relative ml-3">
+          {!onSearch ? (
+            <div className="absolute text-black dark:text-gray-200 flex items-center px-4 h-full cursor-pointer">
+              <svg
+                className="w-5 h-5 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          ) : (
+            ""
+          )}
           <input
-            className="focus:outline-none focus:border-none bg-gray-100 dark:bg-bg-secondary font-normal w-80 h-10 flex items-center pl-12 text-sm rounded-full"
+            onFocus={() => {
+              setOnSearch(!onSearch);
+            }}
+            onBlur={() => {
+              setOnSearch(false);
+            }}
+            className={`focus:outline-none focus:border-none bg-gray-100 dark:bg-bg-secondary font-normal w-80 h-10 flex items-center text-sm rounded-full ${
+              onSearch ? "pl-4" : "pl-12"
+            }`}
             placeholder="Tìm kiếm trên Facebook"
           />
         </div>
@@ -197,12 +233,24 @@ export default function Header() {
               />
             </svg>
           </a>
+          <span className="absolute -top-1 right-0 w-4 h-4 text-white bg-red-600 rounded-full px-1 text-xs flex items-center">
+            3
+          </span>
           <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-6 rounded-md shadow-xl z-30">
             Thông báo
           </p>
         </div>
-        <div className="group bg-gray-200 dark:bg-bg-secondary rounded-full p-2 ml-3 relative">
-          <a href="#">
+        <div
+          className={`group ${
+            openProfile
+              ? "bg-blue-50 dark:bg-blue-50"
+              : "bg-gray-200 dark:bg-bg-secondary"
+          } rounded-full p-2 ml-3 relative`}
+          onClick={() => {
+            setOpenProfile(!openProfile);
+          }}
+        >
+          <a href="#" className={openProfile ? "text-fb-main" : ""}>
             <svg
               className="w-6 h-6 stroke-current"
               fill="none"
@@ -217,9 +265,244 @@ export default function Header() {
               />
             </svg>
           </a>
-          <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-7 rounded-md shadow-xl z-30">
-            Tài khoản
-          </p>
+          {!openProfile ? (
+            <p className="absolute invisible group-hover:visible text-xs bg-gray-100 dark:bg-gray-200 text-black text-center px-3 py-2 w-24 top-14 -left-7 rounded-md shadow-xl z-30">
+              Tài khoản
+            </p>
+          ) : (
+            ""
+          )}
+          {openProfile ? (
+            <div className="absolute p-2 top-12 right-0 w-80 h-auto space-y-2 text-white dark:text-gray-300 bg-black dark:bg-bg-main border border-bg-secondary rounded-lg z-20">
+              <div className="flex items-center space-x-2 hover:bg-bg-secondary rounded-lg p-2 cursor-pointer">
+                <img
+                  className="w-14 h-14 rounded-full"
+                  src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80"
+                  alt="Thang NM"
+                />
+                <div className="flex flex-col">
+                  <span className="dark:text-gray-300 text-sm">Thang NM</span>
+                  <span className="dark:text-gray-300 text-xs">
+                    Xem trang cá nhân của bạn
+                  </span>
+                </div>
+              </div>
+              <hr className="border-b-1 dark:border-bg-secondary" />
+              <div className="flex items-center hover:bg-bg-secondary rounded-lg p-1 cursor-pointer">
+                <a
+                  href="#"
+                  className="dark:text-white p-2 w-10 h-10 bg-bg-secondary group-hover:bg-bg-main rounded-full"
+                >
+                  <svg
+                    className="w-6 h-6 stroke-current"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <div className="flex flex-col ml-3">
+                  <span className="dark:text-gray-300 text-sm">
+                    Đóng góp ý kiến
+                  </span>
+                  <span className="dark:text-gray-300 text-xs">
+                    Góp phần cải thiện phiên bản Facebook mới.
+                  </span>
+                </div>
+              </div>
+              <hr className="border-b-1 dark:border-bg-secondary" />
+              <div className="flex items-center justify-between hover:bg-bg-secondary rounded-lg p-1 cursor-pointer">
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="dark:text-white p-2 w-10 h-10 bg-bg-secondary group-hover:bg-bg-main rounded-full"
+                  >
+                    <svg
+                      className="w-6 h-6 stroke-current"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </a>
+                  <span className="dark:text-gray-300 text-sm ml-3">
+                    Cài đặt & quyền riêng tư
+                  </span>
+                </div>
+                <a href="#">
+                  <svg
+                    className="w-6 h-6 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div className="flex items-center justify-between hover:bg-bg-secondary rounded-lg p-1 cursor-pointer">
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="dark:text-white p-2 w-10 h-10 bg-bg-secondary group-hover:bg-bg-main rounded-full"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </a>
+                  <span className="dark:text-gray-300 text-sm ml-3">
+                    Trợ giúp & hỗ trợ
+                  </span>
+                </div>
+                <a href="#">
+                  <svg
+                    className="w-6 h-6 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div className="flex items-center justify-between hover:bg-bg-secondary rounded-lg p-1 cursor-pointer">
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="dark:text-white p-2 w-10 h-10 bg-bg-secondary group-hover:bg-bg-main rounded-full"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                      />
+                    </svg>
+                  </a>
+                  <span className="dark:text-gray-300 text-sm ml-3">
+                    Màn hình & trợ năng
+                  </span>
+                </div>
+                <a href="#">
+                  <svg
+                    className="w-6 h-6 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div className="flex items-center justify-between hover:bg-bg-secondary rounded-lg p-1 cursor-pointer">
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="dark:text-white p-2 w-10 h-10 bg-bg-secondary group-hover:bg-bg-main rounded-full"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                      />
+                    </svg>
+                  </a>
+                  <span className="dark:text-gray-300 text-sm ml-3">
+                    Đăng xuất
+                  </span>
+                </div>
+              </div>
+              <div className="text-xs space-x-1 p-1">
+                <a className="max-w-max" href="#">
+                  Quyền riêng tư
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Điều khoản
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Quảng cáo
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Lựa chọn quảng cáo
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Cookie
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Xem thêm
+                </a>
+                <span>·</span>
+                <a className="max-w-max" href="#">
+                  Facebook @ 2021
+                </a>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div
           className={`group relative rounded-full p-2 ml-3 ${

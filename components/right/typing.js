@@ -87,7 +87,7 @@ export default function Typing() {
               className="p-2 w-full text-sm bg-gray-200 dark:bg-bg-secondary rounded-full outline-none focus:outline-none"
               placeholder="Aa"
             />
-            <div className="absolute p-1.5 w-9 h-9 top-0.5 right-0.5 rounded-full hover:bg-gray-600">
+            <div className="absolute p-1.5 w-9 h-9 top-0 right-0 rounded-full hover:bg-gray-600">
               <a href="#" className="text-fb-main">
                 <svg
                   className="w-6 h-6 stroke-current"

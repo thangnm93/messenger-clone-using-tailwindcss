@@ -10,7 +10,7 @@ export default function Home() {
         <title>Messenger Clone using TailwindCSS</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="w-screen h-screen">
         <Header />
         <div className="flex">
           <MainLeft />
