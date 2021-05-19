@@ -2,7 +2,7 @@ export default function Chat() {
   return (
     <div>
       <ul className="overflow-y-auto scrollbar max-h-80vh">
-        <li className="flex p-2 group">
+        <li className="flex p-2">
           <div className="flex items-end">
             <img
               className="w-6 h-6 rounded-full border-bg-secondary ring-1 ring-gray-50"
@@ -177,7 +177,7 @@ export default function Chat() {
             </div>
           </div>
         </li>
-        <li className="flex p-2 group flex-col items-center mt-2">
+        <li className="flex p-2 flex-col items-center mt-2">
           <span className="flex items-center justify-center text-black dark:text-gray-300 -mt-3 h-6 px-3 text-xs font-light mx-auto">
             CN 11:37
           </span>
@@ -349,7 +349,7 @@ export default function Chat() {
             </svg>
           </div>
         </li>
-        <li className="flex p-2 group justify-end text-gray-300">
+        <li className="flex p-2 justify-end text-gray-300">
           <div className="flex flex-col items-end ml-2 text-gray-300">
             <div className="flex items-center group">
               <div className="flex justify-center items-center ml-2 space-x-1 invisible group-hover:visible">
@@ -469,7 +469,7 @@ export default function Chat() {
             />
           </div>
         </li>
-        <li className="flex p-2 group">
+        <li className="flex p-2">
           <div className="flex items-end">
             <img
               className="w-6 h-6 rounded-full border-bg-secondary ring-1 ring-gray-50"
@@ -644,7 +644,7 @@ export default function Chat() {
             </div>
           </div>
         </li>
-        <li className="flex p-2 group">
+        <li className="flex p-2">
           <div className="flex items-end">
             <img
               className="w-6 h-6 rounded-full border-bg-secondary ring-1 ring-gray-50"
@@ -819,12 +819,12 @@ export default function Chat() {
             </div>
           </div>
         </li>
-        <li className="flex p-2 group flex-col items-center mt-2">
+        <li className="flex p-2 flex-col items-center mt-2">
           <span className="flex items-center justify-center text-black dark:text-gray-300 -mt-3 h-6 px-3 text-xs font-light mx-auto">
             CN 11:37
           </span>
         </li>
-        <li className="flex p-2 group">
+        <li className="flex p-2">
           <div className="flex items-end">
             <img
               className="w-6 h-6 rounded-full border-bg-secondary ring-1 ring-gray-50"
@@ -999,7 +999,7 @@ export default function Chat() {
             </div>
           </div>
         </li>
-        <li className="flex p-2 group">
+        <li className="flex p-2">
           <div className="flex items-end">
             <img
               className="w-6 h-6 rounded-full border-bg-secondary ring-1 ring-gray-50"
